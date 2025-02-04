@@ -1,0 +1,271 @@
+@use "reset.scss";
+@import "variables.scss";
+
+%flex-row {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+%orange-button-template {
+    background: $orange-color;
+    border-radius: 4px;
+    border: none;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 15px;
+    text-align: center;
+
+    color: $white-color;
+
+    cursor: pointer;
+
+    transition: 1s;
+
+    &:hover {
+        background-color: $white-color;
+        color: $orange-color;
+
+        transition: 1s;
+    }
+}
+
+%transparent-button-template {
+    background-color: transparent;
+
+    border-radius: 4px;
+    border: 2px solid $white-color;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 15px;
+    text-align: center;
+
+    color: $white-color;
+
+    cursor: pointer;
+
+    transition: 1s;
+
+    &:hover {
+        background-color: $white-color;
+        color: $orange-color;
+
+        transition: 1s;
+    }
+}
+
+body {
+    background-color: $page-bg-color;
+}
+
+[class*="__container"] {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+@media (max-width: 1350px) {
+    [class*="__container"] {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 990.98px) {
+    [class*="__container"] {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767.98) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+//============================//
+.header {
+    .header__container {
+        @extend %flex-row;
+        justify-content: end;
+        min-height: 94px;
+
+        .header__menu {}
+
+        .header__button {
+
+            @extend %orange-button-template;
+            padding: 14px 18px;
+        }
+    }
+}
+
+//============================//
+.menu {}
+
+.menu__list {
+    @extend %flex-row;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    gap: 27px;
+    margin-right: 51px;
+}
+
+.menu__item {
+    font-family: $default-font;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    text-transform: capitalize;
+}
+
+.menu__link {
+    color: $white-color;
+    text-decoration: none;
+    transition: 1s;
+
+    &:hover {
+        color: $orange-color;
+        transition: 1s;
+    }
+}
+
+//============================//
+
+.page {}
+
+.page__main {
+    min-height: calc(900px - 94px);
+}
+
+.main-block {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    .main-block__container {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        .main-block__body {
+
+
+            color: $white-color;
+            font-family: $default-font;
+
+            .main-block__subtitle {
+
+                font-style: normal;
+                font-weight: 900;
+                font-size: 16px;
+                line-height: 20px;
+                /* or 125% */
+                letter-spacing: 0.15em;
+                padding: 16px 0;
+            }
+
+            .main-block__heading {
+                width: 654px;
+
+                font-family: $accent-font;
+                font-weight: 600;
+                font-size: 64px;
+                line-height: 72px;
+                margin-bottom: 31px;
+            }
+
+            .main-block__text {
+                width: 521px;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 30px;
+
+                margin-bottom: 36px;
+            }
+
+            .main-block__button-group {
+                @extend %flex-row;
+                justify-content: flex-start;
+                gap: 23px;
+
+                .button-group__button {
+                    width: 160px;
+                    height: 50px;
+
+                    @extend %transparent-button-template;
+
+                    &:first-child {
+                        @extend %orange-button-template;
+                    }
+                }
+            }
+        }
+
+        .elipse-small-grey {
+            top: -95px;
+            left: -102px;
+        }
+
+        .grouped-items-image {
+            left: 764px;
+            top: -93px;
+            z-index: -1;
+
+            @media (max-width: 1350px) {
+                left: 350px;
+            }
+
+            @media (max-width: 760px) {
+                display: none;
+            }
+        }
+    }
+
+}
+
+.aside-block {
+    position: absolute;
+
+    .aside-block__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+.bg-image {
+    position: absolute;
+}
+
+.highlight-text {
+    color: $orange-color;
+}
+
+
+.button-group {
+    .button-group__button {}
+}
