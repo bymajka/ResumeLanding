@@ -108,14 +108,20 @@ input {
   border-radius: 0;
 }
 
-.main-block .main-block__container .main-block__body .main-block__button-group, .menu__list, .header .header__container {
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list, .portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul, .about-block .about-block__container .about-block__body .about-block__table-group, .main-block .main-block__container .main-block__body .main-block__button-group, .menu__list, .header .header__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.main-block .main-block__container .main-block__body .main-block__button-group .button-group__button:first-child, .header .header__container .header__button {
+.services-block .services-block__container .services-block__body, .services-block .services-block__container, .portfolio-block .portfolio-block__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-block .about-block__container .about-block__body .about-block__button, .main-block .main-block__container .main-block__body .main-block__button-group .button-group__button:first-child, .header .header__container .header__button {
   background: #FE461C;
   border-radius: 4px;
   border: none;
@@ -129,7 +135,7 @@ input {
   cursor: pointer;
   transition: 1s;
 }
-.main-block .main-block__container .main-block__body .main-block__button-group .button-group__button:hover:first-child, .header .header__container .header__button:hover {
+.about-block .about-block__container .about-block__body .about-block__button:hover, .main-block .main-block__container .main-block__body .main-block__button-group .button-group__button:hover:first-child, .header .header__container .header__button:hover {
   background-color: #FFFFFF;
   color: #FE461C;
   transition: 1s;
@@ -156,7 +162,7 @@ input {
 }
 
 body {
-  background-color: #24263B;
+  background-color: #1F2235;
 }
 
 [class*=__container] {
@@ -307,12 +313,227 @@ body {
   cursor: pointer;
 }
 
+.page__about {
+  min-height: 833px;
+  background-color: #24263B;
+}
+
+.about-block .about-block__container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  color: #FFFFFF;
+}
+.about-block .about-block__container .about-block__image {
+  position: relative;
+  top: 220px;
+  left: 0px;
+}
+.about-block .about-block__container .about-block__body {
+  font-family: "Public Sans";
+  position: relative;
+  top: 163px;
+}
+.about-block .about-block__container .about-block__body .about-block__text {
+  width: 524px;
+  height: 130px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.about-block .about-block__container .about-block__body .about-block__table-group {
+  justify-content: start;
+  gap: 54px;
+}
+.about-block .about-block__container .about-block__body .about-block__table-group .about-block__table {
+  width: 242px;
+  height: 182px;
+  border-collapse: collapse;
+}
+.about-block .about-block__container .about-block__body .about-block__table-group .about-block__table td {
+  padding: 0 3px;
+}
+.about-block .about-block__container .about-block__body .about-block__button {
+  width: 160px;
+  height: 56px;
+}
+
+.page__portfolio {
+  min-height: 1270px;
+}
+
+.portfolio-block .portfolio-block__container {
+  color: #FFFFFF;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: "Public Sans";
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__subtitle {
+  margin: 120px 0 17px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__h2 {
+  margin-bottom: 54px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification {
+  width: 476px;
+  margin-bottom: 36px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul {
+  gap: 40px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul li {
+  cursor: pointer;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul li:hover {
+  text-decoration: underline;
+  transform: translateY(-5px);
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images {
+  display: grid;
+  gap: 24px;
+  grid-template-areas: "a b c" "d b f" "d e f";
+  min-height: 828px;
+  width: 100%;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image1 {
+  grid-area: a;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image2 {
+  grid-area: b;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image3 {
+  grid-area: c;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image4 {
+  grid-area: d;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image5 {
+  grid-area: e;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+.portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__images .portfolio-block__images-image6 {
+  grid-area: f;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+}
+
+.page__services {
+  min-height: 750px;
+  background-color: #24263B;
+}
+
+.services-block .services-block__container {
+  color: #FFFFFF;
+}
+.services-block .services-block__container .services-block__body {
+  margin-top: 120px;
+  width: 100%;
+}
+.services-block .services-block__container .services-block__body .services-block__subtitle {
+  width: 172px;
+  height: 36px;
+  margin-bottom: 17px;
+}
+.services-block .services-block__container .services-block__body .services-block__h2 {
+  margin-bottom: 55px;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages {
+  width: 100%;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item {
+  width: 307px;
+  height: 360px;
+  background: #1F2235;
+  border-radius: 8px;
+  padding: 41px 0 41px 25px;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item p {
+  width: 173px;
+  height: 21px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 27px 0;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item .advantage-desc {
+  width: 238px;
+  height: 72px;
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 37px;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item button {
+  width: 45px;
+  height: 45px;
+  background-color: #24263B;
+  background-image: url("../src/img/advantage-item-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item button:hover {
+  background-color: #FE461C;
+}
+
 .bg-image {
   position: absolute;
 }
 
 .highlight-text {
   color: #FE461C;
+}
+
+.subtitle {
+  width: 115px;
+  height: 36px;
+  background: #24263B;
+  box-shadow: 0px 0px 24px rgba(15, 16, 24, 0.42);
+  border-radius: 4px;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
+  text-align: center;
+  align-content: center;
+  letter-spacing: 0.15em;
+}
+
+.h2 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #FFFFFF;
+}
+
+.medium-weight {
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */
