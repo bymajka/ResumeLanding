@@ -108,14 +108,14 @@ input {
   border-radius: 0;
 }
 
-.services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list, .portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul, .about-block .about-block__container .about-block__body .about-block__table-group, .main-block .main-block__container .main-block__body .main-block__button-group, .menu__list, .header .header__container {
+.client-block .client-block__container .client-block__body .client-block__reviews, .resume-block .resume-block__container .resume-block__body .resume-block__skills .skill .skill-name-percentage, .resume-block .resume-block__container .resume-block__body .experience-list, .resume-block .resume-block__container, .services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list, .portfolio-block .portfolio-block__container .portfolio-block__body .portfolio-block__classification > ul, .about-block .about-block__container .about-block__body .about-block__table-group, .main-block .main-block__container .main-block__body .main-block__button-group, .menu__list, .header .header__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.services-block .services-block__container .services-block__body, .services-block .services-block__container, .portfolio-block .portfolio-block__container {
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__heading-block, .client-block .client-block__container .client-block__body, .client-block, .resume-block .resume-block__container .resume-block__body .resume-block__skills .skill, .resume-block .resume-block__container .resume-block__body .resume-block__skills, .resume-block .resume-block__container .resume-block__body, .services-block .services-block__container .services-block__body, .services-block .services-block__container, .portfolio-block .portfolio-block__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -158,6 +158,28 @@ input {
 .main-block .main-block__container .main-block__body .main-block__button-group .button-group__button:hover {
   background-color: #FFFFFF;
   color: #FE461C;
+  transition: 1s;
+}
+
+.resume-block .resume-block__container .resume-block__body .experience-list button {
+  background-color: #24263B;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 24px rgba(15, 16, 24, 0.42);
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 12px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 0 21px;
+  transition: 1s;
+  cursor: pointer;
+}
+.resume-block .resume-block__container .resume-block__body .experience-list button:hover {
+  background-color: #FE461C;
+  box-shadow: none;
   transition: 1s;
 }
 
@@ -497,6 +519,148 @@ body {
 }
 .services-block .services-block__container .services-block__body .services-block__advantages > .advantages__block-list .advantage__item button:hover {
   background-color: #FE461C;
+}
+
+.page__resume {
+  min-height: 806px;
+}
+
+.resume-block .resume-block__container {
+  align-items: normal;
+}
+.resume-block .resume-block__container .resume-block__body {
+  align-items: flex-start;
+  color: #FFFFFF;
+  font-family: "Outfit";
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__subtitle {
+  margin-top: 120px;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__h2 {
+  margin: 16px 0 47px;
+}
+.resume-block .resume-block__container .resume-block__body .experience-list {
+  margin-bottom: 40px;
+  gap: 20px;
+}
+.resume-block .resume-block__container .resume-block__body .experience-list button {
+  height: 36px;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills {
+  width: 606px;
+  height: 345px;
+  gap: 43px;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill {
+  width: 100%;
+  height: 54px;
+  align-items: start;
+  gap: 15px;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill .skill-name-percentage {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  width: 100%;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill .skill-line {
+  width: 100%;
+  height: 1em;
+  background-color: #FFFFFF;
+  border-radius: 300px;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill .skill-line .skill-overline {
+  background-color: #FE461C;
+  border-radius: inherit;
+  height: inherit;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill[data-skill=adobe-illustrator] .skill-overline {
+  width: 90%;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill[data-skill=adobe-photoshop] .skill-overline {
+  width: 80%;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill[data-skill=adobe-after-effects] .skill-overline {
+  width: 70%;
+}
+.resume-block .resume-block__container .resume-block__body .resume-block__skills .skill[data-skill=figma] .skill-overline {
+  width: 60%;
+}
+.resume-block .resume-block__container img {
+  width: 572px;
+  height: 504px;
+  margin-top: 266px;
+}
+
+.page__client {
+  min-height: 747px;
+  background-color: #24263B;
+}
+
+.client-block {
+  color: #FFFFFF;
+}
+.client-block .client-block__container .client-block__body {
+  font-family: "Public Sans";
+  width: 100%;
+}
+.client-block .client-block__container .client-block__body .client-block__subtitle {
+  width: 161px;
+  height: 36px;
+  padding: 12px 26px;
+  margin-top: 120px;
+}
+.client-block .client-block__container .client-block__body .client-block__h2 {
+  margin: 24px 0 49px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews {
+  width: 100%;
+  gap: 24px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block {
+  background: url("../src/img/review-cloud-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateX(-24px);
+  padding: 41px 41px 82px 41px;
+  width: 424px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__heading-block {
+  position: relative;
+  align-items: start;
+  width: 290;
+  height: 75px;
+  border-bottom: 1px solid #FFFFFF;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__heading-block .heading-block__h3 {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__heading-block .heading-block__subtitle {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__heading-block .heading-block__img {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block .img-cover__block .review-block__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 15px 0 30px;
+}
+.client-block .client-block__container .client-block__body .client-block__reviews .review-block > img {
+  transform: translateX(-12px) translateY(-20px);
 }
 
 .bg-image {
