@@ -1,5 +1,5 @@
 @use "reset.scss";
-@import "variables.scss";
+@import "variables";
 
 %flex-row {
     display: flex;
@@ -144,8 +144,6 @@ body {
         justify-content: end;
         min-height: 94px;
 
-        .header__menu {}
-
         .header__button {
 
             @extend %orange-button-template;
@@ -155,7 +153,6 @@ body {
 }
 
 //============================//
-.menu {}
 
 .menu__list {
     @extend %flex-row;
@@ -185,8 +182,6 @@ body {
 }
 
 //============================//
-
-.page {}
 
 .page__main {
     min-height: calc(900px - 94px);
@@ -319,10 +314,6 @@ body {
             font-family: $default-font;
             position: relative;
             top: 163px;
-
-            .about-block__subtitle {}
-
-            .about-block__h2 {}
 
             .about-block__text {
                 width: 524px;
@@ -743,6 +734,385 @@ body {
 }
 
 //============================//
+
+.page__blog {
+    min-height: 862px;
+}
+
+.blog-block {
+    color: $white-color;
+
+    &__body {
+        @extend %flex-column;
+        font-family: $default-font;
+
+        .blog-list {
+            @extend %flex-row;
+            gap: 24px;
+
+            @media (max-width: 760px) {
+                flex-direction: column;
+            }
+
+            &__block {
+
+                &-image {
+                    background-color: $gray-color;
+                    width: 424px;
+                    height: 315px;
+                    border-radius: 8px;
+                }
+
+                &-activity {
+                    @extend %flex-row;
+                    justify-content: flex-start;
+                    gap: 18px;
+                    margin: 26px 0 23px;
+
+                    .activity-list__image-title {
+                        @extend %flex-row;
+                        gap: 9px;
+                        justify-content: start;
+
+                        .activity-title {
+                            width: 54px;
+                            height: 14px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 16px;
+                        }
+                    }
+                }
+
+                &-h3 {
+                    width: 345px;
+                    height: 29px;
+                    font-family: $accent-font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 30px;
+
+                    margin-bottom: 10px;
+                }
+
+                &-text {
+                    width: 360px;
+                    height: 48px;
+
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 24px;
+
+                    text-shadow: 0px 0px 24px rgba(179, 181, 191, 0.42);
+                }
+            }
+        }
+    }
+
+    &__subtitle {
+        margin-top: 120px;
+    }
+
+    &__h2 {
+        margin: 22px 0 61px;
+    }
+}
+
+//============================//
+
+.page__cta {
+    min-height: 630px;
+    background-color: $page-bg-color2;
+    position: relative;
+}
+
+.cta-block {
+
+    &__container {
+        position: relative;
+        min-height: 630px;
+    }
+
+    &__body {
+        width: 100%;
+        height: 390px;
+
+        @extend %flex-row;
+        padding: 0 50px;
+
+        color: $white-color;
+        background-color: $page-bg-color1;
+        font-family: $default-font;
+
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 8px;
+
+
+        .cta-desc {
+            padding-left: 30px;
+
+            &__subtitle {
+                width: 183px;
+                height: 30px;
+
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 28px;
+
+                margin-bottom: 9px;
+            }
+
+            &__h2 {
+                width: 479px;
+                height: 59px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 55px;
+                line-height: 55px;
+
+                margin-bottom: 12px;
+            }
+
+            &__text {
+                width: 433px;
+                height: 21px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+
+        .cta-form {
+
+            position: relative;
+
+            &__input {
+                width: 550px;
+                height: 60px;
+
+                background: #FFFFFF;
+                border-radius: 80px;
+                border: none;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                color: #9DA1B4;
+
+                padding: 20px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &__button {
+                @extend %orange-button-template;
+                width: 190px;
+                height: 60px;
+                border-radius: 80px;
+
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}
+
+//============================//
+
+.page__contact {
+    min-height: 1488px;
+}
+
+.contact-block {
+
+    &__container {
+        padding: 0 91px;
+    }
+
+    &__body {
+        @extend %flex-column;
+        font-family: $default-font;
+        align-items: center;
+        color: $white-color;
+    }
+
+    &__subtitle {
+        width: 133px;
+        height: 36px;
+        box-shadow: 0px 0px 24px rgba(15, 16, 24, 0.42);
+        border-radius: 4px;
+
+        margin-top: 120px;
+    }
+
+    &__h2 {
+        margin: 19px 0 46px;
+    }
+
+    &__info-form {
+        @extend %flex-row;
+        align-items: flex-start;
+        gap: 100px;
+        width: 100%;
+        margin: 0 75px;
+
+        .info-form__info-blocks {
+            @extend %flex-column;
+            gap: 20px;
+
+            .info-block {
+                width: 368px;
+                height: 117px;
+                box-sizing: border-box;
+                background-color: $page-bg-color2;
+
+                width: 368px;
+                height: 117px;
+
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+
+                @extend %flex-row;
+                justify-content: start;
+
+                &:hover img {
+                    transform: rotate(-10deg);
+                    transition: 0.5s;
+                }
+
+                &__title-text {
+                    @extend %flex-column;
+                    align-items: flex-start;
+                }
+
+                &__title {
+                    width: 205px;
+                    height: 26px;
+                    font-family: $accent-font;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 30px;
+                    margin-bottom: 8px;
+                }
+
+                &__text {
+                    width: 224px;
+                    height: 48px;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-shadow: 0px 0px 24px rgba(179, 181, 191, 0.42);
+                }
+            }
+        }
+
+        .info-form {
+            width: 700px;
+            height: 434px;
+
+            &__label {
+                display: block;
+                width: 174px;
+                height: 26px;
+                font-family: $accent-font;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+
+                margin-bottom: 28px;
+            }
+
+            &__name-email {
+                width: 700px;
+                height: 56px;
+                @extend %flex-row;
+                gap: 30px;
+
+                input {
+                    width: 335px;
+                    height: 56px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 8px;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #70717B;
+
+                    padding: 12px 29px;
+                    background-color: $page-bg-color2;
+                }
+            }
+
+            &__message {
+                width: 700px;
+                height: 210px;
+                margin-top: 18px;
+                width: 700px;
+                height: 210px;
+                background: $page-bg-color2;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                font-family: $default-font;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 19px;
+                color: #70717B;
+                padding: 12px 29px;
+            }
+
+            &__button {
+                @extend %orange-button-template;
+                width: 220px;
+                height: 56px;
+                border-radius: 4px;
+
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &__map {
+        margin-top: 80px;
+        border-radius: 8px;
+        width: 100%;
+        height: 550px;
+    }
+}
+
+//============================//
+
+.footer {
+    background-color: $page-bg-color2;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-color;
+    font-family: $accent-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    .rights-reserved {
+        text-align: center;
+    }
+}
+
 
 .bg-image {
     position: absolute;
