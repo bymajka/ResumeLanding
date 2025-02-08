@@ -313,6 +313,17 @@ body {
         font-size: 64px;
         line-height: 72px;
         margin-bottom: 31px;
+
+        @include respond-to(md) {
+            font-size: 36px;
+            line-height: 42px;
+            width: 100%;
+        }
+
+        @include respond-to(sm) {
+            font-size: 28px;
+            line-height: 36px;
+        }
     }
 
     &__text {
@@ -322,6 +333,10 @@ body {
         line-height: 30px;
 
         margin-bottom: 36px;
+
+        @include respond-to(md) {
+            width: 100%;
+        }
     }
 
     &__button-group {
@@ -338,6 +353,15 @@ body {
             &:first-child {
                 @extend %orange-button-template;
             }
+
+            @include respond-to(sm) {
+                width: auto;
+                flex: 1;
+            }
+        }
+
+        @include respond-to(md) {
+            width: 100%;
         }
     }
 }
@@ -352,6 +376,10 @@ body {
 
         img {
             cursor: pointer;
+        }
+
+        @include respond-to(sm) {
+            display: none;
         }
     }
 }
@@ -371,18 +399,71 @@ body {
         gap: 60px;
 
         color: $white-color;
+
+        @include respond-to(xl) {
+            & {
+                gap: 30px;
+            }
+        }
+
+        @include respond-to(lg) {
+            & {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     }
 
     &__image {
         position: relative;
         top: 220px;
         left: 0px;
+
+        @include respond-to(xl) {
+            & {
+                width: 470px;
+                height: auto;
+            }
+        }
+
+        @include respond-to(lg) {
+            & {
+                top: 20px;
+            }
+        }
+
+        @include respond-to(md) {
+            & {
+                width: 100%;
+            }
+        }
     }
 
     &__body {
         font-family: $default-font;
         position: relative;
         top: 163px;
+
+        @include respond-to(xl) {
+            & {
+                width: 450px;
+            }
+        }
+
+        @include respond-to(lg) {
+            & {
+                top: 0px;
+            }
+        }
+
+        @include respond-to(md) {
+            & {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+        }
     }
 
     &__text {
@@ -395,12 +476,36 @@ body {
         line-height: 26px;
 
         margin-bottom: 20px;
+
+        @include respond-to(xl) {
+            & {
+                width: auto;
+            }
+        }
+
+        @include respond-to(md) {
+            & {
+                height: auto;
+            }
+        }
     }
 
     &__table-group {
         @extend %flex-row;
         justify-content: start;
         gap: 54px;
+
+        @include respond-to(xl) {
+            & {
+                gap: 10px;
+            }
+        }
+
+        @include respond-to(md) {
+            & {
+                flex-direction: column;
+            }
+        }
     }
 
     &__table {
@@ -448,15 +553,34 @@ body {
 
     &__h2 {
         margin-bottom: 54px;
+
+        @include respond-to(md) {
+            & {
+                text-align: center;
+            }
+        }
     }
 
     &__classification {
         width: 476px;
         margin-bottom: 36px;
 
+        @include respond-to(md) {
+            & {
+                width: 100%;
+            }
+        }
+
         >ul {
             @extend %flex-row;
             gap: 40px;
+
+            @include respond-to(md) {
+                & {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }
 
             li {
                 cursor: pointer;
@@ -479,6 +603,30 @@ body {
 
         min-height: 828px;
         width: 100%;
+
+        @include respond-to(lg) {
+            & {
+                grid-template-areas:
+                    "a"
+                    "b"
+                    "b"
+                    "c"
+                    "d"
+                    "d"
+                    "e"
+                    "f"
+                    "f";
+                height: 2600px;
+                width: 60%;
+                margin-bottom: 40px;
+            }
+        }
+
+        @include respond-to(md) {
+            & {
+                width: 100%;
+            }
+        }
 
         // Define image names and grid areas
         $image-areas: (
@@ -519,6 +667,13 @@ body {
         @extend %flex-column;
         margin-top: 120px;
         width: 100%;
+
+        @include respond-to(lg) {
+            & {
+                margin-top: 80px;
+                margin-bottom: 40px;
+            }
+        }
     }
 
     &__subtitle {
@@ -529,6 +684,12 @@ body {
 
     &__h2 {
         margin-bottom: 55px;
+
+        @include respond-to(sm) {
+            & {
+                text-align: center;
+            }
+        }
     }
 
     &__advantages {
@@ -536,6 +697,22 @@ body {
 
         >.advantages__block-list {
             @extend %flex-row;
+
+            @include respond-to(lg) {
+                & {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 15px;
+                }
+            }
+
+            @include respond-to(md) {
+                & {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
 
             .advantage__item {
 
@@ -546,6 +723,24 @@ body {
                 border-radius: 8px;
 
                 padding: 41px 0 41px 25px;
+
+                @include respond-to(xl) {
+                    & {
+                        width: 220px;
+                    }
+                }
+
+                @include respond-to(lg) {
+                    & {
+                        width: 350px;
+                    }
+                }
+
+                @include respond-to(sm) {
+                    & {
+                        width: 100%;
+                    }
+                }
 
                 p {
                     width: 173px;
@@ -571,6 +766,13 @@ body {
                     line-height: 24px;
 
                     margin-bottom: 37px;
+
+                    @include respond-to(xl) {
+                        & {
+                            width: 180px;
+                            font-size: smaller;
+                        }
+                    }
                 }
 
                 button {
@@ -607,11 +809,37 @@ body {
         @extend %flex-row;
         align-items: normal;
 
+        @include respond-to(lg) {
+            & {
+                flex-direction: column;
+            }
+        }
+
         img {
             width: 572px;
             height: 504px;
 
             margin-top: 266px;
+
+            @include respond-to(xl) {
+                & {
+                    width: 550px;
+                }
+            }
+
+            @include respond-to(lg) {
+                & {
+                    width: 100%;
+                    height: auto;
+                    margin-top: 120px;
+                }
+            }
+
+            @include respond-to(sm) {
+                & {
+                    margin-top: 80px;
+                }
+            }
         }
     }
 
@@ -629,6 +857,12 @@ body {
             button {
                 @extend %page-bg-button-template;
                 height: 36px;
+
+                @include respond-to(sm) {
+                    & {
+                        padding: 0 10px;
+                    }
+                }
             }
         }
     }
@@ -647,6 +881,24 @@ body {
 
         @extend %flex-column;
         gap: 43px;
+
+        @include respond-to(xl) {
+            & {
+                width: 450px;
+            }
+        }
+
+        @include respond-to(lg) {
+            & {
+                width: 100%;
+            }
+        }
+
+        @include respond-to(sm) {
+            & {
+                gap: 20px;
+            }
+        }
 
         $skills: (
             "adobe-illustrator": 90%,
@@ -722,12 +974,36 @@ body {
 
     &__h2 {
         margin: 24px 0 49px;
+
+        @include respond-to(sm) {
+            & {
+                text-align: center
+            }
+        }
     }
 
     &__reviews {
         @extend %flex-row;
         width: 100%;
         gap: 24px;
+
+        @include respond-to(xl) {
+            & {
+                width: auto;
+            }
+        }
+
+        @include respond-to(lg) {
+            & {
+                flex-direction: column;
+            }
+        }
+
+        @include respond-to(sm) {
+            & {
+                width: 100%;
+            }
+        }
 
         .review-block {
 
@@ -741,16 +1017,44 @@ body {
 
                 padding: 41px 41px 82px 41px;
                 width: 424px;
+
+                @include respond-to(xl) {
+                    & {
+                        width: 330px;
+                        height: 350px;
+                        transform: none;
+                    }
+                }
+
+                @include respond-to(lg) {
+                    & {
+                        width: 440px;
+                    }
+                }
+
+                @include respond-to(sm) {
+                    & {
+                        width: auto;
+                        padding: 30px 60px 30px;
+                    }
+                }
+
             }
 
             &__heading-block {
                 position: relative;
                 @extend %flex-column;
                 align-items: start;
-                width: 290;
+                width: 290px;
                 height: 75px;
 
                 border-bottom: 1px solid $white-color;
+
+                @include respond-to(xl) {
+                    & {
+                        width: auto;
+                    }
+                }
             }
 
             .heading-block {
@@ -784,10 +1088,29 @@ body {
                 line-height: 26px;
 
                 margin: 15px 0 30px;
+
+                @include respond-to(xl) {
+                    & {
+                        line-height: 20px;
+                    }
+                }
             }
 
             >img {
                 transform: translateX(-12px) translateY(-20px);
+
+                @include respond-to(xl) {
+                    & {
+                        transform: translateY(-20px);
+                    }
+                }
+
+                @include respond-to(sm) {
+                    & {
+                        transform: none;
+                        transform: translateX(10px);
+                    }
+                }
             }
         }
     }
@@ -810,15 +1133,28 @@ body {
             @extend %flex-row;
             gap: 24px;
 
-            @media (max-width: 760px) {
-                flex-direction: column;
-            }
-
             &__block {
+
+                @include respond-to(xl) {
+                    & {
+                        width: 320px;
+                    }
+                }
+
+                @include respond-to(lg) {
+                    & {
+                        width: 480px;
+                    }
+                }
+
+                @include respond-to(sm) {
+                    & {
+                        width: auto;
+                    }
+                }
 
                 &-image {
                     background-color: $gray-color;
-                    width: 424px;
                     height: 315px;
                     border-radius: 8px;
                 }
@@ -835,7 +1171,7 @@ body {
                         justify-content: start;
 
                         .activity-title {
-                            width: 54px;
+                            // width: 54px;
                             height: 14px;
                             font-style: normal;
                             font-weight: 500;
@@ -846,7 +1182,6 @@ body {
                 }
 
                 &-h3 {
-                    width: 345px;
                     height: 29px;
                     font-family: $accent-font;
                     font-style: normal;
@@ -855,10 +1190,16 @@ body {
                     line-height: 30px;
 
                     margin-bottom: 10px;
+
+                    @include respond-to(xl) {
+                        & {
+                            height: auto;
+                        }
+                    }
                 }
 
                 &-text {
-                    width: 360px;
+                    // width: 360px;
                     height: 48px;
 
                     font-style: normal;
@@ -869,15 +1210,34 @@ body {
                     text-shadow: 0px 0px 24px rgba(179, 181, 191, 0.42);
                 }
             }
+
+            @include respond-to(lg) {
+                & {
+                    flex-direction: column;
+                    margin-bottom: 40px;
+                }
+            }
         }
     }
 
     &__subtitle {
         margin-top: 120px;
+
+        @include respond-to(xl) {
+            & {
+                margin-top: 96px;
+            }
+        }
     }
 
     &__h2 {
         margin: 22px 0 61px;
+
+        @include respond-to(xl) {
+            & {
+                margin: 18px 0 48px;
+            }
+        }
     }
 }
 
