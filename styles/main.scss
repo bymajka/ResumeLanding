@@ -1,6 +1,7 @@
 @use "reset.scss";
 @import "variables";
 @import "breakpoints";
+@import "mixins";
 
 %flex-row {
     display: flex;
@@ -99,32 +100,6 @@
     }
 }
 
-@mixin respond-to ($breakpoint) {
-    @if $breakpoint ==sm {
-        @media (max-width: $breakpoint-sm) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==md {
-        @media (max-width: $breakpoint-md) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==lg {
-        @media (max-width: $breakpoint-lg) {
-            @content;
-        }
-    }
-
-    @else if $breakpoint ==xl {
-        @media (max-width: $breakpoint-xl) {
-            @content;
-        }
-    }
-}
-
 body {
     background-color: $page-bg-color1;
 }
@@ -159,24 +134,6 @@ body {
         }
     }
 }
-
-// @media (max-width: 1350px) {
-//     [class*="__container"] {
-//         max-width: 970px;
-//     }
-// }
-
-// @media (max-width: 990.98px) {
-//     [class*="__container"] {
-//         max-width: 750px;
-//     }
-// }
-
-// @media (max-width: 767.98) {
-//     [class*="__container"] {
-//         max-width: none;
-//     }
-// }
 
 .wrapper {
     min-height: 100%;
